@@ -1,0 +1,9 @@
+rm -f *.o *.a nearestneighbour
+
+g++ -c DataVector.cpp -o DataVector.o
+g++ -c VectorDataset.cpp -o VectorDataset.o
+ar rcs libdataset.a DataVector.o VectorDataset.o
+
+g++ -L. -o nearestneighbour nearestneighbour.cpp -ldataset
+
+./nearestneighbour
